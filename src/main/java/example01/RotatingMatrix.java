@@ -17,7 +17,7 @@ public class RotatingMatrix {
         return Arrays.stream(numbers).flatMapToInt(Arrays::stream).mapToObj(Integer::toString).collect(Collectors.joining(", "));
     }
 
-    public void rotate() {
+    private void rotate() {
         int sideLength = numbers[0].length;
         int first = numbers[0][0];
 
