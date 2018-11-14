@@ -1,5 +1,8 @@
 package example01;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class UserInput {
 
     private int[][] numbers;
@@ -16,5 +19,9 @@ public class UserInput {
 
     public int getRotatingCount() {
         return rotatingCount;
+    }
+
+    public String printNumbers() {
+        return Arrays.stream(numbers).flatMapToInt(Arrays::stream).mapToObj(Integer::toString).collect(Collectors.joining(", "));
     }
 }
