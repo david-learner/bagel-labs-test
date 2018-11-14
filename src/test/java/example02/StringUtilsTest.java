@@ -2,15 +2,27 @@ package example02;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import java.net.Inet4Address;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.assertNotNull;
 
 public class StringUtilsTest {
 
     @Test
     public void convertToHashMap() {
-        String userInput = "1, 1, 1, 2, 2, 3, 6, 6, 6, 6, 9, 9, 9";
-        // {1=3, 2=2, 3=1, 6=4, 9=3}
-        assertThat(StringUtils.convertToHashMap(userInput).toString(), is("{1=3, 2=2, 3=1, 6=4, 9=3}"));
+        String userInput = "3, 8, 8, 3, 2, 8, 1, 2, 4, 56";
+        HashMap<Integer, Integer> numberFrequencyChar = StringUtils.convertToHashMap(userInput);
+        assertNotNull(numberFrequencyChar);
+    }
+
+    @Test
+    public void print() {
+        String userInput = "3, 8, 8, 3, 2, 8, 1, 2, 4, 56";
+        HashMap<Integer, Integer> numberFrequencyChar = StringUtils.convertToHashMap(userInput);
+        for (Map.Entry<Integer, Integer> entry : numberFrequencyChar.entrySet()) {
+            System.out.println(entry.getKey() + ", " + entry.getValue());
+        }
     }
 }

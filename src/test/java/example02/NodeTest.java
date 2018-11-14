@@ -5,6 +5,11 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.StringJoiner;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 public class NodeTest {
 
@@ -13,6 +18,7 @@ public class NodeTest {
         Integer key = 1;
         Integer value = 10;
         Node node = new Node(key, value);
+        assertNotNull(node);
     }
 
     @Test
@@ -27,8 +33,14 @@ public class NodeTest {
 
         Collections.sort(nodes);
 
+        StringJoiner joiner = new StringJoiner(", ");
         for (Node node : nodes) {
-            System.out.println("key : " + node.getKey() + " value : " + node.getValue());
+            joiner.add(node.getKey().toString());
         }
+
+        String joinedResult = joiner.toString();
+        String result = "56, 4, 1, 3, 2, 8";
+
+        assertThat(result.equals(joinedResult) ,is(true));
     }
 }

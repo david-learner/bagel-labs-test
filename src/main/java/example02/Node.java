@@ -1,7 +1,5 @@
 package example02;
 
-import java.util.Comparator;
-
 public class Node implements Comparable<Node> {
 
     private final Integer key;
