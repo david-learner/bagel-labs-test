@@ -12,10 +12,18 @@ public class StringUtils {
 
         for (int row = 0; row < 4; row++) {
             for (int column = 0; column < 4; column++) {
-                int token = Integer.parseInt(tokens[index]);
+                int token;
+
+                try {
+                    token = Integer.parseInt(tokens[index]);
+                }catch (NumberFormatException e) {
+                    throw new NumberFormatException("에러 : 숫자만 입력 가능합니다");
+                }
+
                 if (token < 1 || token > 99) {
                     throw new IllegalStateException("에러 : 1~99 자연수만 입력 가능합니다");
                 }
+
                 numbers[row][column] = Integer.parseInt(tokens[index]);
                 index++;
             }
