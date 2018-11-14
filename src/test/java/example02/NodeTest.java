@@ -17,7 +17,6 @@ public class NodeTest {
 
     @Test
     public void compareTo() {
-        // {1=3, 2=2, 3=1, 6=4, 9=3}
         List<Node> nodes = new ArrayList<>();
         nodes.add(new Node(3, 2));
         nodes.add(new Node(8, 3));
