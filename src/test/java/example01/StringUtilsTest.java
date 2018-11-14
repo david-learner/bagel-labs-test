@@ -11,9 +11,9 @@ import static org.junit.Assert.assertThat;
 public class StringUtilsTest {
 
     @Test
-    public void convertToIntArrays() {
+    public void convertToUserInput() {
         String inputNumbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 2";
-        UserInput input = StringUtils.convertToIntArrays(inputNumbers);
+        UserInput input = StringUtils.convertToUserInput(inputNumbers);
 
         String defaultResult = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16";
         String convertedNumbers = Arrays.stream(input.getNumbers())
@@ -28,30 +28,30 @@ public class StringUtilsTest {
     @Test(expected = IllegalArgumentException.class)
     public void exception_over_numbers_size() {
         String abnormalUserInput = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 2";
-        StringUtils.convertToIntArrays(abnormalUserInput);
+        StringUtils.convertToUserInput(abnormalUserInput);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void exception_under_numbers_size() {
         String abnormalUserInput = "1, 2";
-        StringUtils.convertToIntArrays(abnormalUserInput);
+        StringUtils.convertToUserInput(abnormalUserInput);
     }
 
     @Test(expected = IllegalStateException.class)
     public void exception_over_numbers_range() {
         String abnormalUserInput = "100, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 2";
-        StringUtils.convertToIntArrays(abnormalUserInput);
+        StringUtils.convertToUserInput(abnormalUserInput);
     }
 
     @Test(expected = IllegalStateException.class)
     public void exception_under_numbers_range() {
         String abnormalUserInput = "-1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 2";
-        StringUtils.convertToIntArrays(abnormalUserInput);
+        StringUtils.convertToUserInput(abnormalUserInput);
     }
 
     @Test(expected = NumberFormatException.class)
     public void exception_not_number_input() {
         String abnormalUserInput = "ㄱ, ㄴ, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 2";
-        StringUtils.convertToIntArrays(abnormalUserInput);
+        StringUtils.convertToUserInput(abnormalUserInput);
     }
 }

@@ -8,7 +8,7 @@ public class Execute {
         String userInput = null;
 
         while(!(userInput = scanner.nextLine()).equals("end")) {
-            RotatingMatrix matrix = new RotatingMatrix(StringUtils.convertToIntArrays(userInput));
+            RotatingMatrix matrix = new RotatingMatrix(StringUtils.convertToUserInput(userInput));
             matrix.rotateNTimes();
             System.out.println(matrix.printResult());
         }

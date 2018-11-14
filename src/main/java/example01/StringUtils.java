@@ -1,7 +1,7 @@
 package example01;
 
 public class StringUtils {
-    public static UserInput convertToIntArrays(String inputNumbers) {
+    public static UserInput convertToUserInput(String inputNumbers) {
         String[] tokens = inputNumbers.split(", ");
         if (tokens.length != 17) {
             throw new IllegalArgumentException("에러 : 행렬 회전 수를 포함하여 총 17개의 자연수를 입력해주세요");
