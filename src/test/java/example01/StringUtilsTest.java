@@ -38,8 +38,14 @@ public class StringUtilsTest {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void exception_abnormal_numbers_range() {
+    public void exception_over_numbers_range() {
         String abnormalUserInput = "100, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 2";
+        StringUtils.convertToIntArrays(abnormalUserInput);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void exception_under_numbers_range() {
+        String abnormalUserInput = "-1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 2";
         StringUtils.convertToIntArrays(abnormalUserInput);
     }
 }

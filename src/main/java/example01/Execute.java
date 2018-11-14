@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class Execute {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
+        String userInput = null;
 
-        RotatingMatrix matrix = new RotatingMatrix(StringUtils.convertToIntArrays(userInput));
-        matrix.rotateNTimes();
-
-        System.out.println(matrix.printResult());
+        while(!(userInput = scanner.nextLine()).equals("end")) {
+            RotatingMatrix matrix = new RotatingMatrix(StringUtils.convertToIntArrays(userInput));
+            matrix.rotateNTimes();
+            System.out.println(matrix.printResult());
+        }
     }
 }
