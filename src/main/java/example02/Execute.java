@@ -1,4 +1,4 @@
-package example01;
+package example02;
 
 import java.util.Scanner;
 
@@ -7,9 +7,9 @@ public class Execute {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
 
-        RotatingMatrix matrix = new RotatingMatrix(StringUtils.convertToUserInput(userInput));
-        matrix.rotateNTimes();
+        Nodes nodes = NodeConverter.convertToNodes(StringUtils.convertToHashMap(userInput));
+        nodes.sort();
 
-        System.out.println(matrix.printResult());
+        System.out.println(nodes.print());
     }
 }
