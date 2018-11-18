@@ -22,29 +22,28 @@ public class RomanNumeralsConverter {
         }
     };
 
-    public static String convert(String naturalNumber) {
-        String[] tokens = naturalNumber.split("");
 
-        if (tokens.length == 2) {
-            return convertTenth(tokens[0]) + "" + convertUnit(tokens[1]);
+    public static String convert(int number) {
+        if (number >= 10 && number <= 99) {
+            return convertTenth(number / 10) + "" + convertUnit(number % 10);
         }
 
-        if (tokens.length == 3) {
-            return convertHundred(tokens[0]);
+        if (number >= 1 && number <= 9) {
+            return convertUnit(number);
         }
 
-        return convertUnit(tokens[0]);
+        return convertHundred(number);
+
     }
 
-    public static String convertUnit(String unitNumber) {
-        return ROMAN_NUMERALS_CHART.get(Integer.parseInt(unitNumber));
+    public static String convertUnit(int unitNumber) {
+        return ROMAN_NUMERALS_CHART.get(unitNumber);
     }
 
-    public static String convertTenth(String tenthNumber) {
+    public static String convertTenth(int tenth) {
         Integer ten = 10;
         Integer fifty = 50;
         Integer hundred = 100;
-        Integer tenth = Integer.parseInt(tenthNumber);
         StringBuilder sb = new StringBuilder();
 
         if (tenth == 4) {
@@ -67,7 +66,7 @@ public class RomanNumeralsConverter {
         return tenToThirty(sb, tenth).toString();
     }
 
-    private static StringBuilder tenToThirty(StringBuilder sb, Integer tenth) {
+    private static StringBuilder tenToThirty(StringBuilder sb, int tenth) {
         for (int count = 0; count < tenth; count++) {
             sb.append(ROMAN_NUMERALS_CHART.get(10));
         }
@@ -75,8 +74,7 @@ public class RomanNumeralsConverter {
     }
 
 
-    public static String convertHundred(String hundredNumber) {
-        Integer hundred = Integer.parseInt(hundredNumber) * 100;
-        return ROMAN_NUMERALS_CHART.get(hundred);
+    public static String convertHundred(int hundredNumber) {
+        return ROMAN_NUMERALS_CHART.get(hundredNumber);
     }
 }
