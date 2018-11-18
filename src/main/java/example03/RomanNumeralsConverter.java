@@ -24,6 +24,7 @@ public class RomanNumeralsConverter {
 
     public static String convert(int number) {
         isValid(number);
+
         if (number >= 10 && number <= 99) {
             return convertTenth(number / 10) + "" + convertUnit(number % 10);
         }
@@ -33,7 +34,6 @@ public class RomanNumeralsConverter {
         }
 
         return convertHundred(number);
-
     }
 
     private static String convertUnit(int unitNumber) {
@@ -72,7 +72,6 @@ public class RomanNumeralsConverter {
         }
         return sb;
     }
-
 
     private static String convertHundred(int hundredNumber) {
         return ROMAN_NUMERALS_CHART.get(hundredNumber);

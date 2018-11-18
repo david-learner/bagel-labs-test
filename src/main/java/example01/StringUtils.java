@@ -21,7 +21,7 @@ public class StringUtils {
                 }
 
                 if (token < 1 || token > 99) {
-                    throw new IllegalStateException("에러 : 1~99 자연수만 입력 가능합니다");
+                    throw new IllegalStateException("에러 : 1이상 99이하 자연수만 입력 가능합니다");
                 }
 
                 numbers[row][column] = Integer.parseInt(tokens[index]);

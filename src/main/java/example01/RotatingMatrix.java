@@ -46,7 +46,6 @@ public class RotatingMatrix {
         }
     }
 
-
     public void rotateNTimes() {
         for (int count = 0; count < rotatingCount; count++) {
             rotate();
