@@ -22,8 +22,8 @@ public class RomanNumeralsConverter {
         }
     };
 
-
     public static String convert(int number) {
+        isValid(number);
         if (number >= 10 && number <= 99) {
             return convertTenth(number / 10) + "" + convertUnit(number % 10);
         }
@@ -36,11 +36,11 @@ public class RomanNumeralsConverter {
 
     }
 
-    public static String convertUnit(int unitNumber) {
+    private static String convertUnit(int unitNumber) {
         return ROMAN_NUMERALS_CHART.get(unitNumber);
     }
 
-    public static String convertTenth(int tenth) {
+    private static String convertTenth(int tenth) {
         Integer ten = 10;
         Integer fifty = 50;
         Integer hundred = 100;
@@ -74,7 +74,13 @@ public class RomanNumeralsConverter {
     }
 
 
-    public static String convertHundred(int hundredNumber) {
+    private static String convertHundred(int hundredNumber) {
         return ROMAN_NUMERALS_CHART.get(hundredNumber);
+    }
+
+    private static void isValid(int userInput) {
+        if (userInput < 1 || userInput > 100) {
+            throw new IllegalArgumentException("에러 : 1이상 100이하의 자연수만 입력해주세요");
+        }
     }
 }

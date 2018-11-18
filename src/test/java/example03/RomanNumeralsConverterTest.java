@@ -14,11 +14,6 @@ public class RomanNumeralsConverterTest {
     }
 
     @Test
-    public void numberConvert() {
-
-    }
-
-    @Test
     public void convert() {
         String romanNumber = RomanNumeralsConverter.convert(11);
         assertThat(romanNumber, is("XI"));
@@ -42,53 +37,73 @@ public class RomanNumeralsConverterTest {
         assertThat(romanNumber, is("C"));
     }
 
-    @Test
-    public void convertUnit() {
-        String oneToTen = RomanNumeralsConverter.convertUnit(1);
-        assertThat(oneToTen, is("I"));
-        oneToTen = RomanNumeralsConverter.convertUnit(2);
-        assertThat(oneToTen, is("II"));
-        oneToTen = RomanNumeralsConverter.convertUnit(3);
-        assertThat(oneToTen, is("III"));
-        oneToTen = RomanNumeralsConverter.convertUnit(4);
-        assertThat(oneToTen, is("IV"));
-        oneToTen = RomanNumeralsConverter.convertUnit(5);
-        assertThat(oneToTen, is("V"));
-        oneToTen = RomanNumeralsConverter.convertUnit(6);
-        assertThat(oneToTen, is("VI"));
-        oneToTen = RomanNumeralsConverter.convertUnit(7);
-        assertThat(oneToTen, is("VII"));
-        oneToTen = RomanNumeralsConverter.convertUnit(8);
-        assertThat(oneToTen, is("VIII"));
-        oneToTen = RomanNumeralsConverter.convertUnit(9);
-        assertThat(oneToTen, is("IX"));
-    }
+    // comment for private method
 
-    @Test
-    public void convertTenth() {
-        String tenth = RomanNumeralsConverter.convertTenth(1);
-        assertThat(tenth, is("X"));
-        tenth = RomanNumeralsConverter.convertTenth(2);
-        assertThat(tenth, is("XX"));
-        tenth = RomanNumeralsConverter.convertTenth(3);
-        assertThat(tenth, is("XXX"));
-        tenth = RomanNumeralsConverter.convertTenth(4);
-        assertThat(tenth, is("XL"));
-        tenth = RomanNumeralsConverter.convertTenth(5);
-        assertThat(tenth, is("L"));
-        tenth = RomanNumeralsConverter.convertTenth(6);
-        assertThat(tenth, is("LX"));
-        tenth = RomanNumeralsConverter.convertTenth(7);
-        assertThat(tenth, is("LXX"));
-        tenth = RomanNumeralsConverter.convertTenth(8);
-        assertThat(tenth, is("LXXX"));
-        tenth = RomanNumeralsConverter.convertTenth(9);
-        assertThat(tenth, is("XC"));
-    }
-
-    @Test
-    public void convertHundred() {
-        String hundred = RomanNumeralsConverter.convertHundred(100);
-        assertThat(hundred, is("C"));
-    }
+//    @Test
+//    public void convertUnit() {
+//        String oneToTen = RomanNumeralsConverter.convertUnit(1);
+//        assertThat(oneToTen, is("I"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(2);
+//        assertThat(oneToTen, is("II"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(3);
+//        assertThat(oneToTen, is("III"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(4);
+//        assertThat(oneToTen, is("IV"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(5);
+//        assertThat(oneToTen, is("V"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(6);
+//        assertThat(oneToTen, is("VI"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(7);
+//        assertThat(oneToTen, is("VII"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(8);
+//        assertThat(oneToTen, is("VIII"));
+//        oneToTen = RomanNumeralsConverter.convertUnit(9);
+//        assertThat(oneToTen, is("IX"));
+//    }
+//
+//    @Test
+//    public void convertTenth() {
+//        String tenth = RomanNumeralsConverter.convertTenth(1);
+//        assertThat(tenth, is("X"));
+//        tenth = RomanNumeralsConverter.convertTenth(2);
+//        assertThat(tenth, is("XX"));
+//        tenth = RomanNumeralsConverter.convertTenth(3);
+//        assertThat(tenth, is("XXX"));
+//        tenth = RomanNumeralsConverter.convertTenth(4);
+//        assertThat(tenth, is("XL"));
+//        tenth = RomanNumeralsConverter.convertTenth(5);
+//        assertThat(tenth, is("L"));
+//        tenth = RomanNumeralsConverter.convertTenth(6);
+//        assertThat(tenth, is("LX"));
+//        tenth = RomanNumeralsConverter.convertTenth(7);
+//        assertThat(tenth, is("LXX"));
+//        tenth = RomanNumeralsConverter.convertTenth(8);
+//        assertThat(tenth, is("LXXX"));
+//        tenth = RomanNumeralsConverter.convertTenth(9);
+//        assertThat(tenth, is("XC"));
+//    }
+//
+//    @Test
+//    public void convertHundred() {
+//        String hundred = RomanNumeralsConverter.convertHundred(100);
+//        assertThat(hundred, is("C"));
+//    }
+//
+//    @Test
+//    public void isValid() {
+//        int userInput = 9;
+//        RomanNumeralsConverter.isValid(userInput);
+//    }
+//
+//    @Test(expected = IllegalArgumentException.class)
+//    public void isValid_over_number_size() {
+//        int userInput = 101;
+//        RomanNumeralsConverter.isValid(userInput);
+//    }
+//
+//    @Test(expected = IllegalArgumentException.class)
+//    public void isValid_under_number_size() {
+//        int userInput = -1;
+//        RomanNumeralsConverter.isValid(userInput);
+//    }
 }
