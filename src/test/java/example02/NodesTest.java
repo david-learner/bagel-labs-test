@@ -31,4 +31,19 @@ public class NodesTest {
         String result = "56, 4, 1, 3, 3, 2, 2, 8, 8, 8";
         assertThat(nodes.print(), is(result));
     }
+
+    @Test
+    public void integration_max_input() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("3, 8, 8, 3, 2, 8, 1, 2, 4, 56");
+        for (int count = 0; count < 8; count++) {
+            sb.append(", 3, 8, 8, 3, 2, 8, 1, 2, 4, 56");
+        }
+        sb.append(", 3, 8, 8, 3, 2, 8, 1, 2, 4");
+
+        Nodes nodes = NodeConverter.convertToNodes(StringUtils.convertToHashMap(sb.toString()));
+        nodes.sort();
+
+        System.out.println(nodes.print());
+    }
 }
