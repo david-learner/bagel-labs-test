@@ -2,6 +2,8 @@ package example01;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+
 public class UserInputTest {
     @Test
     public void create() {
@@ -13,5 +15,6 @@ public class UserInputTest {
         };
         int rotatingCount = 2;
         UserInput input = new UserInput(numbers, rotatingCount);
+        assertNotNull(input);
     }
 }
